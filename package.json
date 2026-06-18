@@ -5,16 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:web": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
+    "@hono/node-server": "^2.0.5",
+    "@mastra/core": "^1.43.0",
+    "better-sqlite3": "^12.11.1",
+    "hono": "^4.12.26",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^24.12.4",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
@@ -23,8 +32,10 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
+    "tsx": "^4.22.4",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.4",
-    "vite": "^8.0.13"
+    "vite": "^8.0.13",
+    "vitest": "^4.1.9"
   }
 }
