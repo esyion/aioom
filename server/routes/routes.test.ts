@@ -5,7 +5,7 @@ import type { Member, Message } from '../../shared/types.ts'
 process.env.DB_PATH = ':memory:'
 process.env.OPENAI_API_KEY = 'test-key'
 
-const { app } = await import('../index.ts')
+const { app } = await import('../app.ts')
 
 describe('HTTP 路由', () => {
   it('join 创建真人成员', async () => {

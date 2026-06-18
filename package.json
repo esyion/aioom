@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:server": "tsx watch server/index.ts",
+    "dev": "concurrently -n web,server -c blue,green \"vite\" \"tsx watch --env-file=.env server/index.ts\"",
+    "dev:server": "tsx watch --env-file=.env server/index.ts",
     "dev:web": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
@@ -28,6 +28,7 @@
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
+    "concurrently": "^10.0.3",
     "eslint": "^10.4.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.2",
@@ -39,6 +40,8 @@
     "vitest": "^4.1.9"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["better-sqlite3"]
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
   }
 }

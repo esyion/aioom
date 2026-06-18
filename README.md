@@ -71,3 +71,30 @@ export default defineConfig([
   },
 ])
 ```
+
+## AI 群聊
+
+### 配置
+
+复制 `.env.example` 为 `.env`,填入:
+
+```
+OPENAI_API_KEY=你的key
+OPENAI_BASE_URL=    # 可选,OpenAI 兼容厂商填其 baseURL
+OPENAI_MODEL=       # 可选,默认 gpt-4o-mini
+```
+
+### 启动
+
+```bash
+pnpm install
+pnpm dev        # 同时起前端(5173)与后端(3001)
+```
+
+打开 http://localhost:5173,起昵称进群。
+
+- 不 @ 任何人 → 所有 AI 回复
+- @某个/某些 AI → 只有被 @ 的 AI 回复
+- @某个真人 → 仅提醒,AI 不回复
+
+AI 角色在 `server/config/agents.config.ts` 中配置,可增删改。
