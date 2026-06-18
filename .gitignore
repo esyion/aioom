@@ -29,3 +29,5 @@ dist-ssr
 
 # Runtime database files (SQLite + WAL/SHM derivatives)
 data.sqlite*
+
+.omc
